@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">一键启动</string>
+    <string name="quickEverNote">EverNote</string>
+    <string name="notEverNote">未安装EverNote</string>
+    <string name="quickTimScanQRCode">扫一扫</string>
+    <string name="notTim">未安装TIM</string>
+    <string name="quickQQScanQRCode">扫一扫</string>
+    <string name="notQQ">未安装QQ</string>
+    <string name="quickWeChatScanQRCode">扫一扫</string>
+    <string name="notWeChat">未安装微信</string>
+    <string name="quickWeChatPayment">付款码</string>
+    <string name="quickAliPayScan">扫一扫</string>
+    <string name="quickAliPayPayment">付款码</string>
+    <string name="notAliPay">未安装支付宝</string>
+    <string name="quickMobikeScanQRCode">扫一扫</string>
+    <string name="notMobike">未安装摩拜单车</string>
+    <string name="not_root">没有root权限，请授权root权限</string>
+</resources>

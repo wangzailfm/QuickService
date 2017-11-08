@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="top.jowanxu.evernotequicksetting">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Holo.Light">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".service.QuickEverNoteService"
+            android:icon="@drawable/ic_ever_note"
+            android:label="@string/quickEverNote"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:process=":keep">
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true"/>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".service.QuickTIMScanService"
+            android:icon="@drawable/ic_tim_scan"
+            android:label="@string/quickTimScanQRCode"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:process=":keep">
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true"/>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".service.QuickQQScanService"
+            android:icon="@drawable/ic_qq_scan"
+            android:label="@string/quickQQScanQRCode"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:process=":keep">
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true"/>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".service.QuickWeChatScanService"
+            android:icon="@drawable/ic_wechat_scan"
+            android:label="@string/quickWeChatScanQRCode"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:process=":keep">
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true"/>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".service.QuickWeChatPaymentService"
+            android:icon="@drawable/ic_wechat_pay"
+            android:label="@string/quickWeChatPayment"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:process=":keep">
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true"/>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".service.QuickAliPayScanService"
+            android:icon="@drawable/ic_alipay_scan"
+            android:label="@string/quickAliPayScan"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:process=":keep">
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true"/>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".service.QuickAliPayPaymentService"
+            android:icon="@drawable/ic_alipay_pay"
+            android:label="@string/quickAliPayPayment"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:process=":keep">
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true"/>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".service.QuickMobikeScanService"
+            android:icon="@drawable/ic_mobike_scan"
+            android:label="@string/quickMobikeScanQRCode"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:process=":keep">
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true"/>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>
