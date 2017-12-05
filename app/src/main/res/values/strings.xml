@@ -1,7 +1,5 @@
 <resources>
-    <string name="app_name">EverNoteQuickSetting</string>
-    <string name="quickEverNote">EverNote</string>
-    <string name="notEverNote">EverNote is not installed</string>
+    <string name="app_name">QuickTileStart</string>
     <string name="quickTimScanQRCode">TIM</string>
     <string name="notTim">TIM is not installed</string>
     <string name="quickQQScanQRCode">QQ</string>
@@ -12,7 +10,5 @@
     <string name="quickAliPayScan">AliPay</string>
     <string name="quickAliPayPayment">AliPayPayment</string>
     <string name="notAliPay">AliPay is not installed</string>
-    <string name="quickMobikeScanQRCode">Mobike</string>
-    <string name="notMobike">Mobike is not installed</string>
     <string name="not_root">There is no root permission. Please authorize root permissions!</string>
 </resources>

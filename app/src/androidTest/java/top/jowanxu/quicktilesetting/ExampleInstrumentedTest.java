@@ -1,4 +1,4 @@
-package top.jowanxu.evernotequicksetting;
+package top.jowanxu.quicktilesetting;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

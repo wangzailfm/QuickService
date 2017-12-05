@@ -1,4 +1,4 @@
-package top.jowanxu.evernotequicksetting
+package top.jowanxu.quicktilesetting
 
 import android.app.Activity
 import android.os.Bundle

@@ -1,4 +1,4 @@
-package top.jowanxu.evernotequicksetting;
+package top.jowanxu.quicktilesetting;
 
 import org.junit.Test;
 

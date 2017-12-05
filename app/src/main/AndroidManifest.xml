@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="top.jowanxu.evernotequicksetting">
+          package="top.jowanxu.quicktilesetting">
 
     <application
         android:allowBackup="true"
@@ -11,23 +11,9 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-
-        <service
-            android:name=".service.QuickEverNoteService"
-            android:icon="@drawable/ic_ever_note"
-            android:label="@string/quickEverNote"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
-            android:process=":keep">
-            <meta-data
-                android:name="android.service.quicksettings.ACTIVE_TILE"
-                android:value="true"/>
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
 
         <service
             android:name=".service.QuickTIMScanService"
@@ -103,20 +89,6 @@
             android:name=".service.QuickAliPayPaymentService"
             android:icon="@drawable/ic_alipay_pay"
             android:label="@string/quickAliPayPayment"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
-            android:process=":keep">
-            <meta-data
-                android:name="android.service.quicksettings.ACTIVE_TILE"
-                android:value="true"/>
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
-
-        <service
-            android:name=".service.QuickMobikeScanService"
-            android:icon="@drawable/ic_mobike_scan"
-            android:label="@string/quickMobikeScanQRCode"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
             android:process=":keep">
             <meta-data
