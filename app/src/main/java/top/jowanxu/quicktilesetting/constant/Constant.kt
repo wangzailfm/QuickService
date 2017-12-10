@@ -46,4 +46,9 @@ object Constant {
      * 扫一扫传参数
      */
     const val WECHAT_SCANNER_PARAM_NAME = "LauncherUI.From.Scaner.Shortcut"
+    /**
+     * 微信扫一扫参数
+     */
+    const val WECHAT_SCANNER_ACTION_PARAM = "android.intent.action.VIEW"
+    const val SHARED_NAME = "_preferences"
 }

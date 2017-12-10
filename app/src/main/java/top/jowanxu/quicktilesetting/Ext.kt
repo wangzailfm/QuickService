@@ -1,12 +1,13 @@
 package top.jowanxu.quicktilesetting
 
+import android.annotation.SuppressLint
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.service.quicksettings.TileService
 import android.widget.Toast
-import top.jowanxu.quicktilesetting.constant.Constant.WECHAT_SCANNER_PARAM_NAME
+import top.jowanxu.quicktilesetting.constant.Constant
 import java.io.DataOutputStream
 
 
@@ -18,44 +19,40 @@ import java.io.DataOutputStream
  * *
  * @param isWeChat        启动微信需要加个参数
  */
-fun TileService.startOtherActivity(pkgName: String, pkgActivityName: String, isWeChat: Boolean) {
-    val intent = Intent()
-    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-    val component = ComponentName(pkgName, pkgActivityName)
-    intent.component = component
-    if (isWeChat) {
-        // 微信如果在其他界面的话需要使用FLAG_ACTIVITY_CLEAR_TOP
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        intent.putExtra(WECHAT_SCANNER_PARAM_NAME, true)
+fun TileService.startOtherActivity(pkgName: String, pkgActivityName: String, isWeChat: Boolean) = try {
+    Intent().apply {
+        addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        component = ComponentName(pkgName, pkgActivityName)
+        if (isWeChat) {
+            // 微信如果在其他界面的话需要使用FLAG_ACTIVITY_CLEAR_TOP
+            addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            putExtra(Constant.WECHAT_SCANNER_PARAM_NAME, true)
+        }
+        action = Constant.WECHAT_SCANNER_ACTION_PARAM
+        startActivityAndCollapse(this)
     }
-    intent.action = "android.intent.action.VIEW"
-    try {
-        startActivityAndCollapse(intent)
-    } catch (e: Exception) {
-        e.printStackTrace()
-    }
+} catch (e: Exception) {
+    e.printStackTrace()
 }
 
-fun TileService.startActivityByScheme(scheme: String) {
-    val intent = Intent()
-    intent.action = "android.intent.action.VIEW"
-    val uri = Uri.parse(scheme)
-    intent.data = uri
-    try {
-        startActivityAndCollapse(intent)
-    } catch (e: Exception) {
-        e.printStackTrace()
+fun TileService.startActivityByScheme(scheme: String) = try {
+    Intent().apply {
+        action = Constant.WECHAT_SCANNER_ACTION_PARAM
+        data = Uri.parse(scheme)
+        startActivityAndCollapse(this)
     }
-
+} catch (e: Exception) {
+    e.printStackTrace()
 }
 
-fun Context.hasAppExist(context: Context, pkgName: String, toastInt: Int): Boolean {
-    // 判断是否存在
-    if (!isPkgInstalled(context, pkgName)) {
-        Toast.makeText(context, getString(toastInt), Toast.LENGTH_SHORT).show()
-        return false
+fun Context.hasAppExist(pkgName: String, toastInt: Int): Boolean?  {
+    if (!isPkgInstalled(this, pkgName)) {
+        // 判断是否存在
+        Toast.makeText(this, getString(toastInt), Toast.LENGTH_SHORT).show()
+        return null
+    } else {
+        return true
     }
-    return true
 }
 
 /**
@@ -96,6 +93,20 @@ fun startActivity(context: Context, pkgName: String, pkgActivityName: String) {
 }
 
 /**
+ * 启动关闭通知栏
+ */
+@SuppressLint("WrongConstant")
+fun Context.collapseStatusBar() = try {
+    getSystemService("statusbar")?.let {
+        it.javaClass.getMethod("collapsePanels").run {
+            invoke(it)
+        }
+    }
+} catch (localException: Exception) {
+    localException.printStackTrace()
+}
+
+/**
  * 判断相应包名的apk是否存在
 
  * @param context     Context
@@ -104,16 +115,8 @@ fun startActivity(context: Context, pkgName: String, pkgActivityName: String) {
  * *
  * @return true存在
  */
-fun isPkgInstalled(context: Context, packageName: String?): Boolean {
-    if (packageName == null || "" == packageName) {
-        return false
-    }
-    val info: android.content.pm.ApplicationInfo?
-    try {
-        info = context.packageManager.getApplicationInfo(packageName, 0)
-        return info != null
-    } catch (e: Exception) {
-        return false
-    }
-
+fun isPkgInstalled(context: Context, packageName: String) = try {
+    context.packageManager.getApplicationInfo(packageName, 0) != null
+} catch (e: Exception) {
+    false
 }
