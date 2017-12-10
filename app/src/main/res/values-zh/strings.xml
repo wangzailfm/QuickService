@@ -5,11 +5,15 @@
     <string name="notTim">未安装TIM</string>
     <string name="quickQQScanQRCode">扫一扫</string>
     <string name="notQQ">未安装QQ</string>
+    <string name="quickQQIScanQRCode">扫一扫</string>
+    <string name="notQQInternational">未安装QQ国际版</string>
+    <string name="quickQQLiteScanQRCode">扫一扫</string>
+    <string name="notQQLite">未安装QQ轻聊版</string>
     <string name="quickWeChatScanQRCode">扫一扫</string>
     <string name="notWeChat">未安装微信</string>
-    <string name="quickWeChatPayment">付款码</string>
+    <string name="quickWeChatPayment">微信付款码</string>
     <string name="quickAliPayScan">扫一扫</string>
-    <string name="quickAliPayPayment">付款码</string>
+    <string name="quickAliPayPayment">支付宝付款码</string>
     <string name="notAliPay">未安装支付宝</string>
     <string name="not_root">没有root权限，请授权root权限</string>
 </resources>

@@ -45,6 +45,34 @@
         </service>
 
         <service
+            android:name=".service.QuickQQIScanService"
+            android:icon="@drawable/ic_qq_i_scan"
+            android:label="@string/quickQQIScanQRCode"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:process=":keep">
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true"/>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".service.QuickQQLiteScanService"
+            android:icon="@drawable/ic_qq_lite_scan"
+            android:label="@string/quickQQLiteScanQRCode"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:process=":keep">
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true"/>
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+
+        <service
             android:name=".service.QuickWeChatScanService"
             android:icon="@drawable/ic_wechat_scan"
             android:label="@string/quickWeChatScanQRCode"

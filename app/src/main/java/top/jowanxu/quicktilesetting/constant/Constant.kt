@@ -23,6 +23,14 @@ object Constant {
      */
     const val TIM_PACKAGE_NAME = "com.tencent.tim"
     /**
+     * 包名
+     */
+    const val QQ_I_PACKAGE_NAME = "com.tencent.mobileqqi"
+    /**
+     * 包名
+     */
+    const val QQ_LITE_PACKAGE_NAME = "com.tencent.qqlite"
+    /**
      * 主界面
      */
     const val TIM_MAIN_ACTIVITY_NAME = "com.tencent.mobileqq.activity.SplashActivity"

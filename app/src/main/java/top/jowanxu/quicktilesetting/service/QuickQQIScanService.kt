@@ -7,15 +7,16 @@ import top.jowanxu.quicktilesetting.hasAppExist
 import top.jowanxu.quicktilesetting.startActivity
 import top.jowanxu.quicktilesetting.startOtherActivity
 
-class QuickWeChatPaymentService : TileService() {
+class QuickQQIScanService : TileService() {
 
     override fun onClick() {
         super.onClick()
-        // 判断微信是否存在
-        hasAppExist(Constant.WECHAT_PACKAGE_NAME, R.string.notWeChat) ?: return
+        // 判断QQ国际版是否存在
+        hasAppExist(Constant.QQ_I_PACKAGE_NAME, R.string.notQQInternational) ?: return
         // 先启动主界面，隐藏下拉
-        startOtherActivity(Constant.WECHAT_PACKAGE_NAME, Constant.WECHAT_MAIN_ACTIVITY_NAME, false)
+        startOtherActivity(Constant.QQ_I_PACKAGE_NAME, Constant.TIM_MAIN_ACTIVITY_NAME, false)
         // 然后通过命令启动
-        startActivity(applicationContext, Constant.WECHAT_PACKAGE_NAME, Constant.WECHAT_PAYMENT_ACTIVITY_NAME)
+        startActivity(applicationContext, Constant.QQ_I_PACKAGE_NAME, Constant.TIM_SCANNER_ACTIVITY_NAME)
     }
+
 }

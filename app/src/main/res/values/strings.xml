@@ -4,6 +4,10 @@
     <string name="notTim">TIM is not installed</string>
     <string name="quickQQScanQRCode">QQ</string>
     <string name="notQQ">QQ is not installed</string>
+    <string name="quickQQIScanQRCode">Internal</string>
+    <string name="notQQInternational">QQInternational is not installed</string>
+    <string name="quickQQLiteScanQRCode">QQLite</string>
+    <string name="notQQLite">QQLite is not installed</string>
     <string name="quickWeChatScanQRCode">WeChat</string>
     <string name="notWeChat">WeChat is not installed</string>
     <string name="quickWeChatPayment">AliPayPayment</string>
