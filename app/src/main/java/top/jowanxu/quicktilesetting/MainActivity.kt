@@ -4,7 +4,7 @@ import android.app.Activity
 import android.os.Bundle
 
 /**
- * @author
+ * @author Jowan
  */
 class MainActivity : Activity() {
 
