@@ -8,8 +8,8 @@ android {
         applicationId "top.jowanxu.quicktilesetting"
         minSdkVersion 24
         targetSdkVersion 25
-        versionCode 28
-        versionName "1.0.1"
+        versionCode 30
+        versionName "1.0.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

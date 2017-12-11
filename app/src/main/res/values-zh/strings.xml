@@ -5,9 +5,9 @@
     <string name="notTim">未安装TIM</string>
     <string name="quickQQScanQRCode">扫一扫</string>
     <string name="notQQ">未安装QQ</string>
-    <string name="quickQQIScanQRCode">扫一扫</string>
+    <string name="quickQQIScanQRCode"/>
     <string name="notQQInternational">未安装QQ国际版</string>
-    <string name="quickQQLiteScanQRCode">扫一扫</string>
+    <string name="quickQQLiteScanQRCode"/>
     <string name="notQQLite">未安装QQ轻聊版</string>
     <string name="quickWeChatScanQRCode">扫一扫</string>
     <string name="notWeChat">未安装微信</string>
